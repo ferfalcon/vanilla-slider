@@ -1,0 +1,86 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+
+body, 
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider__item-list {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+
+  ::marker {
+		content: none;
+	}
+}
+
+.slider__item {
+  min-width: 100%;
+  padding: 1rem;
+  background-color: white;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider__controls button {
+  background-color: gainsboro;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: .125rem;
+}
+
+.slider__controls button:hover {
+  background-color: whitesmoke;
+}
+
+.slider__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.slider__dot {
+  width: .75rem;
+  height: .75rem;
+  border-radius: 50%;
+  background-color: gainsboro;
+  cursor: pointer;
+  border: solid thin transparent;
+}
+
+.slider__dot.active {
+  background-color: black;
+  border: solid thin white;
+}
+
+@media (min-width: 48rem) {
+  .slider__dots {
+    display: none;
+  }
+}
